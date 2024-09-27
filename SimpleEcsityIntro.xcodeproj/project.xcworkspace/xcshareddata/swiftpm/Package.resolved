@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ecsity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnrnyquist/Ecsity.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8d8226c34754a45137606c027f64136082a31157"
+      }
+    }
+  ],
+  "version" : 2
+}
