@@ -1,5 +1,5 @@
-import SpriteKit
 import Ecsity
+import SpriteKit
 
 class GameScene: SKScene {
     var game: IntroToEcsity!
@@ -39,7 +39,7 @@ class GameScene: SKScene {
         let speedX = cos(Double(sprite.zRotation)) * speed
         let speedY = sin(Double(sprite.zRotation)) * speed
         let velocity = Velocity(dx: speedX, dy: speedY)
-        let entity = Entity()
+        let entity = Ecsity.Entity()
         game.engine.add(component: position, to: entity)
         game.engine.add(component: display, to: entity)
         game.engine.add(component: velocity, to: entity)

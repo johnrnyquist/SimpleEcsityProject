@@ -1,4 +1,5 @@
 import SpriteKit
+import Ecsity
 
 open class Display: Component, Hashable, Equatable {
     public var node: SKNode

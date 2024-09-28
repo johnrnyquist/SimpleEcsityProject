@@ -1,3 +1,4 @@
+import Ecsity
 
 public struct Velocity: Component {
     public var dx: Double

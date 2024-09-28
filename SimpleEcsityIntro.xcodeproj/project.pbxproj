@@ -16,6 +16,10 @@
 		8D9DEF9F2B05B43800064B01 /* IntroToSwash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9DEF9E2B05B43800064B01 /* IntroToSwash.swift */; };
 		8D9DEFAD2B05B45000064B01 /* DisplaySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9DEFA82B05B45000064B01 /* DisplaySystem.swift */; };
 		8DCC655C2CA72C04004C9ACC /* Ecsity in Frameworks */ = {isa = PBXBuildFile; productRef = 8DCC655B2CA72C04004C9ACC /* Ecsity */; };
+		931395BE359BE99495DE9142 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139025067E48C4BE943AFB /* Display.swift */; };
+		931399F9E378BAE3B88FCDF9 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139ED245650069F3B34F4C /* Velocity.swift */; };
+		93139CFFE6169AB226916B30 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139AE88CDBE6A8E902BF64 /* Position.swift */; };
+		93139E2BA574C957319D6E29 /* MovementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139E98B3546D59B10E1457 /* MovementSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		8D9DEF972B05B3DD00064B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D9DEF9E2B05B43800064B01 /* IntroToSwash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroToSwash.swift; sourceTree = "<group>"; };
 		8D9DEFA82B05B45000064B01 /* DisplaySystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplaySystem.swift; sourceTree = "<group>"; };
+		93139025067E48C4BE943AFB /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		93139AE88CDBE6A8E902BF64 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		93139E98B3546D59B10E1457 /* MovementSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementSystem.swift; sourceTree = "<group>"; };
+		93139ED245650069F3B34F4C /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +70,12 @@
 			isa = PBXGroup;
 			children = (
 				8D9DEF942B05B3DD00064B01 /* Assets.xcassets */,
-				8D9DEF9E2B05B43800064B01 /* IntroToSwash.swift */,
-				8D9DEFA72B05B45000064B01 /* systems */,
-				8D9DEF8D2B05B3DA00064B01 /* GameScene.swift */,
-				8D9DEF8F2B05B3DB00064B01 /* GameViewController.swift */,
 				8D9DEF872B05B3DA00064B01 /* AppDelegate.swift */,
+				8D9DEF8F2B05B3DB00064B01 /* GameViewController.swift */,
+				8D9DEF8D2B05B3DA00064B01 /* GameScene.swift */,
+				8D9DEF9E2B05B43800064B01 /* IntroToSwash.swift */,
+				8DCC65642CA86FC2004C9ACC /* components */,
+				8D9DEFA72B05B45000064B01 /* systems */,
 				8D9DEF912B05B3DB00064B01 /* Main.storyboard */,
 				8D9DEF962B05B3DD00064B01 /* LaunchScreen.storyboard */,
 			);
@@ -77,8 +86,19 @@
 			isa = PBXGroup;
 			children = (
 				8D9DEFA82B05B45000064B01 /* DisplaySystem.swift */,
+				93139E98B3546D59B10E1457 /* MovementSystem.swift */,
 			);
 			path = systems;
+			sourceTree = "<group>";
+		};
+		8DCC65642CA86FC2004C9ACC /* components */ = {
+			isa = PBXGroup;
+			children = (
+				93139AE88CDBE6A8E902BF64 /* Position.swift */,
+				93139ED245650069F3B34F4C /* Velocity.swift */,
+				93139025067E48C4BE943AFB /* Display.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +183,10 @@
 				8D9DEF9F2B05B43800064B01 /* IntroToSwash.swift in Sources */,
 				8D9DEFAD2B05B45000064B01 /* DisplaySystem.swift in Sources */,
 				8D9DEF882B05B3DA00064B01 /* AppDelegate.swift in Sources */,
+				93139E2BA574C957319D6E29 /* MovementSystem.swift in Sources */,
+				93139CFFE6169AB226916B30 /* Position.swift in Sources */,
+				931399F9E378BAE3B88FCDF9 /* Velocity.swift in Sources */,
+				931395BE359BE99495DE9142 /* Display.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
