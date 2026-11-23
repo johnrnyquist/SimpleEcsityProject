@@ -1,14 +1,15 @@
 {
+  "originHash" : "44b5d45459bf978dba448557f540866a42190299b9f6a95d63a291a21a238c7e",
   "pins" : [
     {
       "identity" : "ecsity",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/johnrnyquist/Ecsity.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "8ea425e5e0422bfe817ca97c5e847739972face8"
+        "revision" : "567bc6825c7899009a224d63f0fff0115f40c727",
+        "version" : "1.0.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

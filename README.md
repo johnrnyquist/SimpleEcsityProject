@@ -4,9 +4,13 @@ Tap empty space to launch a ship. Tap a moving ship to stop it, then tap it agai
 
 ## Run the example
 
-Place the [Ecsity package](https://github.com/johnrnyquist/Ecsity) in a folder named `Ecsity` next to this repository. Use the package revision recorded in the Xcode project's `Package.resolved`.
+Open `SimpleEcsityIntro.xcodeproj` in Xcode. Xcode resolves the [Ecsity package](https://github.com/johnrnyquist/Ecsity) from GitHub, starting at version `1.0.0` and allowing updates within the `1.x` series.
 
-Open `SimpleEcsityIntro.xcworkspace` in Xcode to use the sibling package. Select the `SimpleEcsityIntro` scheme and an iOS simulator, then press ⌘R to run or ⌘U to run the tests. Opening the standalone `.xcodeproj` uses the pinned revision from GitHub.
+Select the `SimpleEcsityIntro` scheme and an iOS simulator, then press ⌘R to run or ⌘U to run the tests.
+
+## Develop with a local Ecsity checkout
+
+Clone Ecsity into a folder named `Ecsity` next to this repository. Open `SimpleEcsityIntro.xcworkspace` in Xcode to build the example against the sibling checkout.
 
 ## How a frame works
 
