@@ -1,20 +1,34 @@
 # Ecsity SpriteKit example
 
-Tap empty space to launch a ship. Tap a moving ship to stop it, then tap it again to resume at its original speed and heading. Each ship responds independently.
+Launch two ships and pause one while the other keeps flying. This SpriteKit example shows how changing one component changes which systems work with a ship.
 
 ## Run the example
 
-Open `SimpleEcsityIntro.xcodeproj` in Xcode. Xcode resolves the [Ecsity package](https://github.com/johnrnyquist/Ecsity) from GitHub, starting at version `1.0.0` and allowing updates within the `1.x` series.
+```sh
+git clone https://github.com/johnrnyquist/SimpleEcsityProject.git
+cd SimpleEcsityProject
+open SimpleEcsityIntro.xcodeproj
+```
 
-Select the `SimpleEcsityIntro` scheme and an iOS simulator, then press ⌘R to run or ⌘U to run the tests.
+Xcode resolves the Ecsity package from GitHub. Select the `SimpleEcsityIntro` scheme and an iPhone simulator running iOS 17 or later. Press **⌘R** to run or **⌘U** to run the tests.
 
-## Develop with a local Ecsity checkout
+1. Tap near the center to launch a ship. Tap the ship to pause it.
+2. Tap empty space to launch a second ship. It moves while the first stays in place.
+3. Tap the paused ship again. It resumes at its original speed and heading.
 
-Clone Ecsity into a folder named `Ecsity` next to this repository. Open `SimpleEcsityIntro.xcworkspace` in Xcode to build the example against the sibling checkout.
+## Follow a ship through the code
 
-## How a frame works
+In `GameScene.launchShip(at:)`, adding `Position` registers the new entity with the engine. The scene then adds `Velocity` in points per second and `Display` for the sprite. All three components are Swift structs. `Display` holds a reference to the SpriteKit node. [GameScene.swift](SimpleEcsityIntro/GameScene.swift) · [Display.swift](SimpleEcsityIntro/components/Display.swift)
 
-1. Adding a `Position` registers the ship's entity. The scene then adds a `Display` holding its SpriteKit node and a `Velocity` in points per second.
-2. `MovementSystem` finds entities with both `Position` and `Velocity`. It advances the position by velocity times elapsed seconds and writes the updated struct back with `engine.add(component:to:)`.
-3. `DisplaySystem` runs next. It finds entities with `Position` and `Display` and places each node at its stored position.
-4. Tapping a moving ship saves its velocity in `PausedVelocity` and removes `Velocity`. The ship leaves the movement query and stays in the display query. A second tap restores the saved velocity and the movement system picks it up on the next frame.
+Each frame, the scene passes elapsed time to the engine. Two systems run in the order the game added them. [IntroToEcsity.swift](SimpleEcsityIntro/IntroToEcsity.swift)
+
+| System | Required components | What it does |
+| --- | --- | --- |
+| [`MovementSystem`](SimpleEcsityIntro/systems/MovementSystem.swift) | `Position`, `Velocity` | Advances the position by velocity times elapsed seconds and writes the updated struct back to the engine. |
+| [`DisplaySystem`](SimpleEcsityIntro/systems/DisplaySystem.swift) | `Position`, `Display` | Adds the sprite to the scene if needed and places it at the updated position. |
+
+Tapping a ship saves its velocity in `PausedVelocity` and removes `Velocity`. The ship now matches only `DisplaySystem`. Tapping it again restores `Velocity`, so both systems pick it up on the next frame. [GameScene.swift](SimpleEcsityIntro/GameScene.swift) · [Velocity.swift](SimpleEcsityIntro/components/Velocity.swift)
+
+## Work on Ecsity alongside the example
+
+Clone the Ecsity repository into a folder named `Ecsity` beside `SimpleEcsityProject`, then open `SimpleEcsityIntro.xcworkspace` to use that local checkout. [Ecsity repository](https://github.com/johnrnyquist/Ecsity)

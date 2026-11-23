@@ -1,9 +1,42 @@
 import SpriteKit
+import UIKit
 import XCTest
 @testable import SimpleEcsityIntro
 
 @MainActor
 final class ShipMovementTests: XCTestCase {
+    func testStoryboardPresentsASceneThatFillsTheView() throws {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GameViewController.self))
+        let controller = try XCTUnwrap(storyboard.instantiateInitialViewController() as? GameViewController)
+        let view = try XCTUnwrap(controller.view as? SKView)
+        let scene = try XCTUnwrap(view.scene as? GameScene)
+        XCTAssertEqual(scene.scaleMode, .resizeFill)
+        XCTAssertEqual(scene.size, view.bounds.size)
+    }
+
+    func testFirstTapReplacesTheCenteredInstructionsWithAShip() throws {
+        let scene = GameScene(size: CGSize(width: 800, height: 400))
+        scene.didMove(to: SKView())
+        let hint = try XCTUnwrap(scene.children.compactMap { $0 as? SKLabelNode }.first)
+        XCTAssertTrue(hint.text?.contains("launch") == true)
+        XCTAssertTrue(hint.text?.contains("pause") == true)
+        XCTAssertEqual(hint.position, CGPoint(x: 400, y: 200))
+
+        scene.size = CGSize(width: 900, height: 500)
+        XCTAssertEqual(hint.position, CGPoint(x: 450, y: 250))
+        scene.touchDown(atPoint: hint.position)
+        scene.game.engine.update(deltaTime: 0)
+
+        XCTAssertNil(hint.parent)
+        let ship = try XCTUnwrap(scene.game.engine.findEntities(with: [Position.self, Display.self, Velocity.self]).first)
+        let display = try XCTUnwrap(scene.game.engine.find(componentType: Display.self, in: ship))
+        XCTAssertEqual(display.node.position, CGPoint(x: 450, y: 250))
+
+        scene.didMove(to: SKView())
+        XCTAssertEqual(scene.game.engine.findEntities(with: [Display.self]), [ship])
+        XCTAssertTrue(scene.children.compactMap { $0 as? SKLabelNode }.isEmpty)
+    }
+
     func testDismissedSceneAndItsEngineAreReleased() {
         weak var releasedScene: GameScene?
         weak var releasedEngine: AnyObject?
