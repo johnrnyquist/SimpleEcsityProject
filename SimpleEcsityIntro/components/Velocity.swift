@@ -9,3 +9,7 @@ public struct Velocity: Component {
         self.dy = dy
     }
 }
+
+struct PausedVelocity: Component {
+    let velocity: Velocity
+}

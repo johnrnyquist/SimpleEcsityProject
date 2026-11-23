@@ -2,7 +2,7 @@
 import Foundation
 import Ecsity
 
-public class Position: Component, CustomStringConvertible, Equatable {
+public struct Position: Component, CustomStringConvertible, Equatable {
     public var x: Double
     public var y: Double
     public var point: CGPoint {
@@ -27,9 +27,5 @@ public class Position: Component, CustomStringConvertible, Equatable {
 
     public var description: String {
         "Position(x: \(x), y: \(y))"
-    }
-
-    public static func ==(lhs: Position, rhs: Position) -> Bool {
-        lhs.x == rhs.x && lhs.y == rhs.y
     }
 }

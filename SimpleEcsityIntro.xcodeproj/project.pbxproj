@@ -20,7 +20,18 @@
 		931399F9E378BAE3B88FCDF9 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139ED245650069F3B34F4C /* Velocity.swift */; };
 		93139CFFE6169AB226916B30 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139AE88CDBE6A8E902BF64 /* Position.swift */; };
 		93139E2BA574C957319D6E29 /* MovementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93139E98B3546D59B10E1457 /* MovementSystem.swift */; };
+		B10000000000000000000001 /* ShipMovementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* ShipMovementTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10000000000000000000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D9DEF7C2B05B3DA00064B01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D9DEF832B05B3DA00064B01;
+			remoteInfo = SimpleEcsityIntro;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8D9DEF842B05B3DA00064B01 /* SimpleEcsityIntro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleEcsityIntro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +47,8 @@
 		93139AE88CDBE6A8E902BF64 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		93139E98B3546D59B10E1457 /* MovementSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementSystem.swift; sourceTree = "<group>"; };
 		93139ED245650069F3B34F4C /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* ShipMovementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipMovementTests.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* SimpleEcsityIntroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleEcsityIntroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				8D9DEF862B05B3DA00064B01 /* SimpleEcsityIntro */,
+				B10000000000000000000005 /* SimpleEcsityIntroTests */,
 				8D9DEF852B05B3DA00064B01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +75,7 @@
 		8D9DEF852B05B3DA00064B01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				B10000000000000000000003 /* SimpleEcsityIntroTests.xctest */,
 				8D9DEF842B05B3DA00064B01 /* SimpleEcsityIntro.app */,
 			);
 			name = Products;
@@ -101,6 +116,14 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		B10000000000000000000005 /* SimpleEcsityIntroTests */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000002 /* ShipMovementTests.swift */,
+			);
+			path = SimpleEcsityIntroTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +147,21 @@
 			productReference = 8D9DEF842B05B3DA00064B01 /* SimpleEcsityIntro.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B10000000000000000000006 /* SimpleEcsityIntroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B10000000000000000000007 /* Build configuration list for PBXNativeTarget "SimpleEcsityIntroTests" */;
+			buildPhases = (
+				B10000000000000000000008 /* Sources */,
+			);
+			buildRules = ();
+			dependencies = (
+				B10000000000000000000009 /* PBXTargetDependency */,
+			);
+			name = SimpleEcsityIntroTests;
+			productName = SimpleEcsityIntroTests;
+			productReference = B10000000000000000000003 /* SimpleEcsityIntroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -134,6 +172,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					B10000000000000000000006 = {
+						TestTargetID = 8D9DEF832B05B3DA00064B01;
+					};
 					8D9DEF832B05B3DA00064B01 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -155,6 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B10000000000000000000006 /* SimpleEcsityIntroTests */,
 				8D9DEF832B05B3DA00064B01 /* SimpleEcsityIntro */,
 			);
 		};
@@ -190,7 +232,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B10000000000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000000000000000000001 /* ShipMovementTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B10000000000000000000009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D9DEF832B05B3DA00064B01 /* SimpleEcsityIntro */;
+			targetProxy = B10000000000000000000004 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8D9DEF912B05B3DB00064B01 /* Main.storyboard */ = {
@@ -340,9 +398,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8GR9TRDWE;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -368,9 +426,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8GR9TRDWE;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -384,6 +442,34 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1000000000000000000000A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.nyquist.SimpleEcsityIntroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleEcsityIntro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleEcsityIntro";
+			};
+			name = Debug;
+		};
+		B1000000000000000000000B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.nyquist.SimpleEcsityIntroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleEcsityIntro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleEcsityIntro";
 			};
 			name = Release;
 		};
@@ -404,6 +490,15 @@
 			buildConfigurations = (
 				8D9DEF9C2B05B3DD00064B01 /* Debug */,
 				8D9DEF9D2B05B3DD00064B01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B10000000000000000000007 /* Build configuration list for PBXNativeTarget "SimpleEcsityIntroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1000000000000000000000A /* Debug */,
+				B1000000000000000000000B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
