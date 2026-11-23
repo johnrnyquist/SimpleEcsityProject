@@ -14,13 +14,13 @@ Xcode resolves the Ecsity package from GitHub. Select the `SimpleEcsityIntro` sc
 
 ## Try it
 
-1. The scene starts empty. Tap near the center to launch a ship, then tap the ship to pause it. In Simulator, a click counts as a tap.
+1. The scene opens with a tap-to-launch hint. Tap near the center to launch a ship, then tap the ship to pause it. In Simulator, a click counts as a tap.
 2. Tap empty space to launch a second ship. It moves while the first stays in place.
 3. Tap the paused ship again. It resumes at its original speed and heading.
 
 ## Follow a ship through the code
 
-A tap on empty space creates an entity. Adding `Position` registers it with the engine. `Display` holds its SpriteKit node, and `Velocity` gives its horizontal and vertical speed in points per second. [GameScene.swift](SimpleEcsityIntro/GameScene.swift)
+In `GameScene.launchShip(at:)`, adding `Position` registers the new entity with the engine. The scene then adds `Velocity` in points per second and `Display` for the sprite. All three components are Swift structs. `Display` holds a reference to the SpriteKit node. [GameScene.swift](SimpleEcsityIntro/GameScene.swift) · [Display.swift](SimpleEcsityIntro/components/Display.swift)
 
 Each frame, the engine runs these systems in order. [IntroToEcsity.swift](SimpleEcsityIntro/IntroToEcsity.swift)
 

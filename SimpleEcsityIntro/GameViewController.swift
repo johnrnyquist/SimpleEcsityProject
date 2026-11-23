@@ -4,13 +4,9 @@ import SpriteKit
 class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let skview = SKView(frame: CGRect(x: 0, y: 0, width: 1024, height: 768))
-        view = skview
-        view.isUserInteractionEnabled = true
-        let scene = GameScene(size: view.frame.size)
-        scene.scaleMode = .aspectFit
-        skview.isUserInteractionEnabled = true
-        skview.isMultipleTouchEnabled = true
-        skview.presentScene(scene)
+        guard let skView = view as? SKView else { return }
+        let scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = .resizeFill
+        skView.presentScene(scene)
     }
 }
